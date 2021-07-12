@@ -4,39 +4,27 @@ public class Person {
 	
 	protected final String name;
 	protected final String surname;
-	protected int age;
+	protected Integer age;
 	protected String address;
 	
-	public Person(String name, String surname) {
+	public Person(String name, String surname, Integer age, String address) {
 		this.name = name;
 		this.surname = surname;
 	}
 	
-	public Person(String name, String surname, int age) {
+	public Person(String name, String surname, Integer age) {
 		this.name = name;
 		this.surname = surname;
 		this.age = age;
 	}
 	
-	Person(PersonBuilder personBuilder) {
-		this.name = personBuilder.name;
-		this.surname = personBuilder.surname;
-		this.age = personBuilder.age;
-		this.address = personBuilder.address;
-	}
 	
 	public boolean hasAge() {
-		if (age == 0) {
-			return false;
-		}
-		return true;
+		return age != 0;
 	}
 	
 	public boolean hasAddress() {
-		if (address.equals(null)) {
-			return false;
-		}
-		return true;
+		return address != null;
 	}
 	
 	public String getName() {
